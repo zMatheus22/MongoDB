@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
+    />
+
+    <!-- Icon -->
+    <link rel="shortcut icon" href="icon/compartilhar.png" image="/x-icon" />
+
+    <!-- My CSS -->
+    <link rel="stylesheet" href="/css/global.css" />
+
+    <title>Adicionar</title>
+  </head>
+  <body>
+    <div class="container w-50">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <a href="/" class="nav-link">
+            <h1 class="bi bi-boxes">Links</h1>
+          </a>
+
+          <a class="btn btn-primary disabled" href="/add">Adicionar Link</a>
+        </div>
+      </nav>
+      <h1>Adicione um novo link no banco de dados</h1>
+
+      <form class="d-flex flex-column" action="/" method="POST">
+        <label for="exampleFormControlTitle" class="form-label">Titulo</label>
+        <input
+          class="mb-2 form-control"
+          name="title"
+          placeholder="Title"
+          type="text"
+          required
+          value="<%= body.title %>"
+        />
+        <label for="exampleFormControlDescription" class="form-label"
+          >Descrição</label
+        >
+        <input
+          class="mb-2 form-control"
+          name="description"
+          placeholder="Description"
+          type="text"
+          value="<%= body.description %>"
+        />
+        <label form="exampleFormControlURL" class="form-label">URL</label>
+        <input
+          class="mb-4 form-control"
+          name="url"
+          placeholder="URL"
+          type="text"
+          required
+          value="<%= body.url %>"
+        />
+        <button class="btn btn-outline-success">Save</button>
+      </form>
+
+      <% if (error) { %>
+      <div class="alert alert-danger mt-3">
+        <strong>Error: </strong><%= error.message %>
+        <a href="/add"><i class="bi bi-x"></i></a>
+      </div>
+      <% } %>
+    </div>
+  </body>
+</html>

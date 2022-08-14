@@ -1,0 +1,14 @@
+body,
+.card {
+  background-color: #010101;
+  color: #f0ece2;
+}
+
+h1,
+h2 {
+  color: #7579e7;
+}
+
+.description {
+  color: #69779b;
+}
